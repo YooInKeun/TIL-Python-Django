@@ -1,0 +1,29 @@
+{% extends 'wordcount/base.html' %}
+
+{% block home_content %}
+
+<div class = "container">
+
+    <br><br><br>
+    <h2>최신 순서입니다.</h2>
+    {% for record in records %}
+    <br>
+    ① 일 자 : {{record.created_at}}
+    <br>
+    ② 입력 텍스트 : {{record.text}}
+    <br>
+    ③ 전체 단어 개수 : {{record.word_all_count}}(개)
+    <br>
+    ④ 단어별 개수
+    <br><br>
+    {{record.word_count}}
+    <br>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    {% endfor %}
+
+    <br>
+    <a href = "{% url 'home' %}">home으로 가기</a>
+
+</div>
+
+{% endblock %}
