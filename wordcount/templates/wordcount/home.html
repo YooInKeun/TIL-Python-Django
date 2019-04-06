@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WordCount Site</title>
-</head>
-<body>
-    <h1>Word Count</h1>
-    
-    <a href="{% url 'about' %}">About</a>
+{% extends 'wordcount/base.html' %}
 
-    <form action="{% url 'count' %}">
-        <textarea cols = "40" rows="10" name = "fulltext"></textarea>
-        <br>
-        <input type = "submit" value = "count!" />
-    </form>
-</body>
-</html>
+{% block home_content %}
+
+<header class="bg-primary text-white">
+  <div class="container text-center">
+  <h1>Welcome to Scrolling Nav</h1>
+  <p class="lead">Welcome to Word Count Site!</p>
+</header>
+
+<form action="{% url 'count' %}">
+
+  <div class = "container">
+  <textarea cols = "150" rows="20" name = "fulltext" placeholder="단어를 입력하고 버튼을 누르세요. 단어의 개수를 셀 수 있습니다."></textarea>
+  <br>
+  <input class = "btn btn-primary" type = "submit" value = "COUNT" style = "position: absolute; left: 1123px;">
+  </div>
+</form>
+
+{% endblock %}
