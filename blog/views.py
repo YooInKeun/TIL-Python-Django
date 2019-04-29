@@ -23,3 +23,8 @@ def create(request):
     blogs = Blog.objects
     
     return render(request, 'home.html', {'blogs' : blogs})
+
+    #return redirect('/')
+
+def portfolio(request):
+    return render(request, 'portfolio.html')

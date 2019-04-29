@@ -9,5 +9,5 @@ class Blog(models.Model):
     body = models.TextField()
 
     def __str__(self):
-
+        
         return self.title
