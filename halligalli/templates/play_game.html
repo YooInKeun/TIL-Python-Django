@@ -8,6 +8,15 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>      
+
+      function playAudio() {
+        var x = document.getElementById("bell");
+        x.play();
+      }
+
+    </script>
+
     <title>Document</title>
 </head>
 <body>
@@ -42,5 +51,46 @@
         </div>
       </div>
     <br/>
+
+    <audio id = "bell" src = "http://www.w3schools.com/html/horse.mp3"></audio>
+
+    <input onclick="playAudio()" type="button" value = "종종종" style="position: absolute; left: 700px; top: 300px; font-size:16px;">
+
+    <div style="position: absolute; left: 400px; top: 50px; font-size:16px;">
+      <textarea rows="5" cols="40">(진행자)&#13&#13( )초 후 카드를 공개합니다.</textarea>
+    </div>
+
+    <div style="position: absolute; left: 400px; top: 200px; font-size:16px;">
+    Computer
+    <br>
+    <textarea rows="5" cols="20"></textarea>
+    </div>
+
+    <div style="position: absolute; left: 400px; top: 370px;">
+        <button style= "font-size:16px;height:100px;width:70px" class="btn btn-secondary" disabled>Com</button>
+          {% csrf_token %}
+        <button style="position: absolute; left: 93px; top: 0px;font-size:16px;height:100px;width:70px" disabled>{{com.current_card}}</button>
+        <br/>
+        현재 점수 : {{com.score}}
+    </div>
+
+    <div style="position: absolute; left: 900px; top: 200px; font-size:16px;">
+    User
+    <br>
+    <textarea rows="5" cols="20"></textarea>
+    </div>
+
+    <div style="position: absolute; left: 900px; top: 370px;">
+        <button style= "font-size:16px;height:100px;width:70px" disabled>{{user.current_card}}</button>
+          {% csrf_token %}
+        <button style="position: absolute; left: 93px; top: 0px;font-size:16px;height:100px;width:70px" class="btn btn-secondary" disabled>User</button>
+        <br/>
+        현재 점수 : {{user.score}}
+    </div>
+
+    <form action="{% url 'show_card' %}" method = "POST" style="position: absolute; left: 680px; top: 370px;">
+        {% csrf_token %}
+        <input id = "com_button" class="btn btn-primary" type="submit" name = "give_card" value="Go!" style="font-size:30px;height:100px;width:100px"/>
+    </form>
 </body>
 </html>
