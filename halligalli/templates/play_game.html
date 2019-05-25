@@ -15,15 +15,49 @@
         x.play();
       }
 
+      window.onload = function(){
+        console.log("test1")
+
+      {% ifequal end_check 1 %}
+
+        console.log("test2")
+        var button = document.getElementById('end_check');
+        button.form.submit();
+
+      {% endifequal %}
+
+      }
+
+      window.onload = function(){
+        console.log("test1")
+
+      {% ifequal end_check 2 %}
+
+        console.log("test2")
+        var button = document.getElementById('end_check2');
+        button.form.submit();
+
+      {% endifequal %}
+
+      }
     </script>
 
     <title>Document</title>
 </head>
-<body>
-    <h1>게임 화면</h1>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter">게임중단</button>
+<body background = "data:image/jpeg;base64,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">
+  <div>  
+    <div style="margin-top: 50px; margin-left: 50px;">
+  <h1>게임 화면</h1>
+<div style="margin-left: 50px;">
+    <form action="{% url 'end_check' %}" style="position: absolute; left: 100px; top: 100px; padding-left: 50px;">
+      <input id="end_check" class="button" name="end_check" type="submit" value="end_check" style="visibility:hidden"/>
+    </form>
+
+    <form action="{% url 'end_check2' %}" style="position: absolute; left: 100px; top: 100px; padding-left: 50px;">
+      <input id="end_check2" class="button" name="end_check2" type="submit" value="end_check2" style="visibility:hidden"/>
+    </form>
+  </div>
       
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -50,47 +84,115 @@
             </div>
         </div>
       </div>
+    </div>
     <br/>
 
     <audio id = "bell" src = "http://www.w3schools.com/html/horse.mp3"></audio>
+    <textarea rows='10' cols ='38'>(안내 메세지)
+    
+{{confirm_message}}
+    </textarea>
+  </div>
+    <!--
+    <h3 style="position: absolute; left: 500px; top: 50px;">count 값 : com-> {{com_cnt}}  user -> {{user_cnt}}</h3>
+    <h3 style="position: absolute; left: 500px; top: 100px;">평균 정답 시간 : {{time_average}} 초</h3>
+    <h3 style="position: absolute; left: 500px; top: 150px;">{{confirm_message}}</h3>
+    -->
 
-    <input onclick="playAudio()" type="button" value = "종종종" style="position: absolute; left: 700px; top: 300px; font-size:16px;">
+    <!--<textarea style="position: absolute; left: 660px; top: 190px;" rows='10' cols ='45'></textarea>-->
+  <form action="{% url 'confirm' %}">
+      <input type="IMAGE" height="150" width="150" src="data:image/jpeg;base64,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" onclick="playAudio()" type="submit" value = "종소리" style="position: absolute; left: 705px; top: 255px; font-size:16px;">
+    </form>
 
+<!--
     <div style="position: absolute; left: 400px; top: 50px; font-size:16px;">
       <textarea rows="5" cols="40">(진행자)&#13&#13( )초 후 카드를 공개합니다.</textarea>
     </div>
+  -->
+    <div style="position: absolute; left: 700px; top: 10px; font-size:25px;">
+      Computer1
+      <br>
+      </div>
 
-    <div style="position: absolute; left: 400px; top: 200px; font-size:16px;">
-    Computer
+      <div style="position: absolute; left: 700px; top: 50px; font-size:16px;">
+          <button style= "font-size:16px;height:100px;width:70px" class="btn btn-secondary" disabled>Com1</button>
+            {% csrf_token %}
+          <button style="position: absolute; left: 93px; top: 0px;font-size:16px;height:100px;width:70px" disabled>{{com1.current_card}}</button>
+          <br/>
+          있는 거 : {{com1.card_num}}&nbsp&nbsp&nbsp&nbsp<strong>꺼낸 거 : {{com1_cnt}}</strong>
+      </div>
+
+    <div style="position: absolute; left: 400px; top: 200px; font-size:25px;">
+    Computer2
     <br>
+    </div>
+    <!--
     <textarea rows="5" cols="20"></textarea>
-    </div>
-
-    <div style="position: absolute; left: 400px; top: 370px;">
-        <button style= "font-size:16px;height:100px;width:70px" class="btn btn-secondary" disabled>Com</button>
+    -->
+    <div style="position: absolute; left: 400px; top: 240px; font-size:16px;">
+        <button style= "font-size:16px;height:100px;width:70px" class="btn btn-secondary" disabled>Com2</button>
           {% csrf_token %}
-        <button style="position: absolute; left: 93px; top: 0px;font-size:16px;height:100px;width:70px" disabled>{{com.current_card}}</button>
+        <button style="position: absolute; left: 93px; top: 0px;font-size:16px;height:100px;width:70px" disabled>{{com2.current_card}}</button>
         <br/>
-        현재 점수 : {{com.score}}
+        있는 거 : {{com2.card_num}}&nbsp&nbsp&nbsp&nbsp<strong>꺼낸 거 : {{com2_cnt}}</strong>
     </div>
 
-    <div style="position: absolute; left: 900px; top: 200px; font-size:16px;">
+  
+    <div style="position: absolute; left: 700px; top: 460px; font-size:25px;">
+    Computer3
+    <br>
+    </div>
+
+    <div style="position: absolute; left: 700px; top: 500px; font-size:16px;">
+        <button style= "font-size:16px;height:100px;width:70px" class="btn btn-secondary" disabled>Com3</button>
+          {% csrf_token %}
+        <button style="position: absolute; left: 93px; top: 0px;font-size:16px;height:100px;width:70px" disabled>{{com3.current_card}}</button>
+        <br/>
+        있는 거 : {{com3.card_num}}&nbsp&nbsp&nbsp&nbsp<strong>꺼낸 거 : {{com3_cnt}}</strong>
+    </div>
+
+    <div style="position: absolute; left: 1160px; top: 200px; font-size:25px;">
     User
     <br>
-    <textarea rows="5" cols="20"></textarea>
-    </div>
 
-    <div style="position: absolute; left: 900px; top: 370px;">
+    <!--
+    <textarea rows="5" cols="20"></textarea>
+    -->
+    </div>
+    <div style="position: absolute; left: 1050px; top: 240px;">
         <button style= "font-size:16px;height:100px;width:70px" disabled>{{user.current_card}}</button>
           {% csrf_token %}
         <button style="position: absolute; left: 93px; top: 0px;font-size:16px;height:100px;width:70px" class="btn btn-secondary" disabled>User</button>
         <br/>
-        현재 점수 : {{user.score}}
+        <strong>꺼낸 거 : {{user_cnt}}</strong>&nbsp&nbsp&nbsp&nbsp있는 거 : {{user.card_num}}
+        <br/><br/><br/><br/><br/><br/>
     </div>
 
-    <form action="{% url 'show_card' %}" method = "POST" style="position: absolute; left: 680px; top: 370px;">
+
+    <div style="position: absolute; left: 10px; top: 400px;"><h3>방금 벨 누른 속도 : {{time_diff}}초</h3></div>
+    <div style="position: absolute; left: 10px; top: 450px;"><h3>정답 평균 속도 : {{time_average}}초</h3></div>
+
+    <form action="{% url 'show_card' %}" method = "POST" style="position: absolute; left: 10px; top: 500px;">
         {% csrf_token %}
-        <input id = "com_button" class="btn btn-primary" type="submit" name = "give_card" value="Go!" style="font-size:30px;height:100px;width:100px"/>
+        <input id = "com_button" class="btn btn-primary" type="submit" name = "give_card" value="카드공개!" style="font-size:16px;height:100px;width:100px"/>
     </form>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter" style="position: absolute; left: 200px; top: 10px;">게임중단</button>
+
 </body>
 </html>
